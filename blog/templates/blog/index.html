@@ -1,0 +1,40 @@
+   {%  extends "blog/base.html" %}
+
+    { {% block title %}
+    Welcome. This is blocktag as placeholder
+    {% endblock %}}
+
+    {% block content %}
+
+    <div class="jumbotron">
+      <div class="container">
+        <h1>Testaboo.com - testing materials from the WEB</h1>
+        <p>Milenski starts here - This is a template for a simple marketing or informational website.</p>
+        <p><a class="btn btn-primary btn-lg" href="#" role="button">Learn more &raquo;</a></p>
+      </div>
+    </div>
+                {% if user.is_authenticated %}
+    <div class="container">
+      <!-- Example row of columns -->
+      <div class="row">
+        <div class="col-md-4">
+          <h2>Business</h2>
+          <p> Business description here. TEXT </p>
+          <p><a class="btn btn-default" href="{% url 'business' %}" role="button">View details &raquo;</a></p>
+        </div>
+        <div class="col-md-4">
+          <h2>Sport</h2>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+       </div>
+        <div class="col-md-4">
+          <h2>Entertainment</h2>
+          <p>Some fun text here</p>
+          <p><a class="btn btn-default" href="#" role="button">View details &raquo;</a></p>
+        </div>
+      </div>
+    {% else %}
+        <div class="container"><h4>Create an account</h4></div>
+    </div>
+                {% endif %}
+      <hr>
+         {% endblock%}
